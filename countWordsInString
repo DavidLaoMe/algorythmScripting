@@ -1,0 +1,26 @@
+/*Write a function called “countWords”.
+
+Given a string, “countWords” returns an object where each key 
+is a word in the given string, with its value being how many times that word appeared in the given string.
+
+Notes:
+* If given an empty string, it should return an empty object.
+*/
+
+function countWords(str) {
+  let strArray = str.split(' ');
+  let strObject = {};
+  
+  if (str.length === 0){
+    return strObject;
+  }
+  for (i = 0; i < strArray.length; i++){
+    strObject[strArray[i]] = (strObject[strArray[i]] || 0) + 1;
+  }
+  return strObject;
+}
+
+// (strObject[strArray[i]] || 0) + 1
+// so if strObject[strArray[i]] is a falsy value, it will return 0; then add 1;
+/* if strObject[strArray[i]] is a truthy value, it will return its current
+ strObject[strArray[i]] value; then add 1 to it. */
