@@ -1,0 +1,42 @@
+/*
+Construct a function objOfMatches that accepts two arrays and 
+a callback. objOfMatches will build an object and return it. 
+To build the object, objOfMatches will test each element of 
+the first array using the callback to see if the output matches
+the corresponding element (by index) of the second array. 
+If there is a match, the element from the first array becomes a
+key in an object, and the element from the second array becomes 
+the corresponding value.
+*/
+
+function objOfMatches(arr1, arr2, elementMatch) {
+  let builtObj = {};
+  let keys = elementMatch(arr1,arr2);
+  for (i = 0; i < keys.length; i++){
+    builtObj[keys[i]] = '';
+  }
+  console.log(builtObj);
+  for(var value in builtObj){
+    for (i = 0; i < arr2.length;i++){
+      if (value === arr2[i]){
+        builtObj[value] = arr2[i];
+      }
+    }
+    return builtObj;
+  }
+}
+
+
+let callback = function elementMatch(array1, array2){
+  let keys = [];
+  for (i = 0; i< array1.length; i++){
+    if (array1[i] === array2[i]){
+      keys.push(array1[i]); // the return value is an object 
+                            //key in builtObj
+    }
+  }
+  return keys;
+}
+
+objOfMatches(['hi', 'howdy', 'bye', 'later', 'hello'],
+['HI', 'Howdy', 'BYE', 'LATER', 'hello'], callback)
