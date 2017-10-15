@@ -1,0 +1,13 @@
+//Function reverses a string:
+
+function reverseString(str) {
+  let stringArray = str.split('');
+  let reverseArray = stringArray.reverse();
+  let outputString = reverseArray.join('');
+
+  return outputString;
+}
+
+reverseString("hello");
+
+//can also stack methods and simply do: return str.split("").reverse().join("");
