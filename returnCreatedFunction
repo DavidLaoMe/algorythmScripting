@@ -1,0 +1,13 @@
+/*
+Create a function createFunction that creates and returns
+a function. When that created function is called, it should 
+print "hello".
+*/
+
+function createFunction() {
+ return function created(){
+   return console.log('hello');
+ }
+}
+
+var function1 = createFunction();
