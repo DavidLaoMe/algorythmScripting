@@ -1,0 +1,18 @@
+/*
+Write a function called “convertDoubleSpaceToSingle”.
+
+Given a string, “convertDoubleSpaceToSingle” returns the passed in string, with all the double spaces converted to single spaces.
+*/
+
+function convertDoubleSpaceToSingle(str) {
+  let re = /  /g;
+  let strMod = str.replace(re, ' ');
+  return strMod;
+}
+
+// the split join method below is pretty rad too
+/*
+function convertDoubleSpaceToSingle(str) {
+  return str.split('  ').join(' ');
+}
+*/
