@@ -1,0 +1,12 @@
+Return the factorial of the provided integer.
+
+function factorialize(num) {
+  let solution = 1;
+  if(num === 0 || num === 1){
+    return 1;
+  }
+  for (let i = num; i>1; i--){
+    solution *= i;
+  }
+  return solution;
+}
