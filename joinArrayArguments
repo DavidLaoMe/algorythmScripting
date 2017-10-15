@@ -1,0 +1,11 @@
+/*Write a function called “joinThreeArrays”.
+
+“joinThreeArrays” returns an array with the elements of “arr1” in order followed by the elements in arguments in order.
+*/
+
+function joinThreeArrays(arr1, arr2, arr3) {
+  let solution;
+  let arrArg = Array.from(arguments);
+  solution = [].concat.apply([], arrArg);
+  return solution;
+}
