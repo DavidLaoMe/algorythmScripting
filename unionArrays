@@ -1,0 +1,30 @@
+/*
+Construct a function union that compares input arrays and returns a new array that contains all elements. If there are duplicate elements, only add it once to the new array. Preserve the order of the elements starting from the first element of the first input array. BONUS: Use reduce!
+*/
+
+//input: array of arrays
+//output: new array with all elements from input in order; do not add any duplicates
+
+function union(arrays) {
+  let newArray = [];
+  arrays.reduce(function(
+    accumulator,
+    currentValue,
+    currentIndex,
+    array){
+      for (i = 0; i < currentValue.length; i++){
+        
+        if (!accumulator.includes(currentValue[i])){
+          accumulator.push(currentValue[i]);
+        }
+      }
+      newArray = accumulator;
+      return accumulator;
+  
+    })
+    return newArray;
+}
+
+
+console.log(union([[5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5,50]]));
+// should log: [5, 10, 15, 88, 1, 7, 100, 50]
