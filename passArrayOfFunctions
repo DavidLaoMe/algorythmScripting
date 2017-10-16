@@ -1,0 +1,33 @@
+/* define a function "passAll" which takes two arguments, 
+the first is any value and the second is an array of functions. 
+These functions can be considered tests, as they will all 
+return either true or false. "passAll" will iterate/loop through
+the array and pass the value to each function as an argument. 
+If all functions(tests) return true, "passAll" will return true. 
+If any of the functions return false, "passAll" will return false.
+*/
+
+function passAll(val,arr){
+  for (let i = 0; i < arr.length; i++){
+    if (!arr[i](val)){
+      return false;
+    }
+  } 
+  return true;
+}
+
+function positive(num){
+  return (num > 0);
+}
+
+function even(num){
+  return (num % 2 === 0 );
+}
+
+function firstDigitOne(num){
+  let arrayNum = num.toString().split('');
+  let returnedNumber = parseInt(arrayNum[0]);
+  return (returnedNumber === 1);
+}
+
+console.log(passAll(-110,[positive,even,firstDigitOne]));
