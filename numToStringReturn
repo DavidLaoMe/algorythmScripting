@@ -1,0 +1,10 @@
+// define a function "firstDigit" that takes a positive integer and returns its first digit (passing 301 returns the number 3)
+
+function firstDigit(num){
+  //(123456789).toString(10).split("")
+  let arrayNum = num.toString().split('');
+  let returnedNumber = parseInt(arrayNum[0]);
+  return returnedNumber;
+  
+  // return first digit
+}
