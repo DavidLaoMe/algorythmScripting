@@ -1,0 +1,32 @@
+/*
+Write a function called “countAllCharacters”.
+
+Given a string, “countAllCharacters” returns an object where each key is a character in the given string. The value of each key should be how many times each character appeared in the given string.
+
+Notes:
+* If given an empty string, countAllCharacters should return an empty object.
+*/
+
+function countAllCharacters(str) {
+  let keyCount = str.split('').reduce(function(counter, currentIndex){
+    return counter[currentIndex] = (counter[currentIndex] || 0) + 1, counter}, {});
+    return keyCount;
+}
+
+var output = countAllCharacters('banana');
+console.log(output);
+
+/*
+another method:
+
+function countAllCharacters(str) {
+  var result = {};
+  
+  for (var i = 0; i < str.length; i++) {
+    var key = str[i];
+    result[key] = (result[key] || 0) + 1;
+  }
+  
+  return result;
+}
+*/
