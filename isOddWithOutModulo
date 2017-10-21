@@ -14,3 +14,13 @@ function isOddWithoutModulo(num) {
 
 var output = isOddWithoutModulo(17);
 console.log(output); // --> true
+
+/*
+Another method below:
+
+function isOddWithoutModulo(num) {
+  var value = num / 2;
+  return !Number.isInteger(value);
+}
+
+*/
