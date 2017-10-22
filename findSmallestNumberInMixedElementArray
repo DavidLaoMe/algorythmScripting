@@ -1,0 +1,21 @@
+/*
+Write a function called “findSmallestNumberAmongMixedElements”.
+
+Given an array of mixed elements, “findSmallestNumberAmongMixedElements” returns the smallest number within the given array.
+
+Notes:
+* If the given array is empty, it should return 0.
+* If the array contains no numbers, it should return 0.
+*/
+
+function findSmallestNumberAmongMixedElements(arr) {
+  let numArray = arr.filter(function(element){
+    return typeof element === 'number';
+  })
+  return numArray.sort(function(a,b){
+    return a-b;
+  })[0] || 0;
+}
+
+var output = findSmallestNumberAmongMixedElements([4, 'lincoln', 9, 'octopus']);
+console.log(output); // --> 4
