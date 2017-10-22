@@ -1,0 +1,42 @@
+/*
+Write a function called “getLongestElement”.
+
+Given an array, “getLongestElement” returns the longest string in the given array.
+
+Notes:
+* If there are ties, it returns the first element to appear.
+* If the array is empty, it should return an empty string.
+*/
+
+function getLongestElement(arr) {
+  let solution = '';
+  solution = arr.reduce(function(a,b){
+    if (a.length > b.length){
+      return a;
+    }
+    return b;
+  })
+  return solution;
+}
+
+var output = getLongestElement(['one', 'two', 'three']);
+console.log(output); // --> 'three'
+
+
+/*Another Method
+
+function getLongestElement(arr) {
+  if (arr.length) {
+    var longest = Math.max.apply(null, arr.map(x => x.length));
+    return arr.filter(x => x.length === longest)[0];
+  }
+  return '';
+}
+
+
+Another
+
+function getLongestElement(arr) {
+  return arr.sort((a, b) => b.length - a.length)[0];
+}
+*/
