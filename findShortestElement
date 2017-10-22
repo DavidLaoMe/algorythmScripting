@@ -1,0 +1,32 @@
+/*
+Write a function called “findShortestElement”.
+
+Given an array, “findShortestElement” returns the shortest string within the given array.
+
+Notes:
+* If there are ties, it should return the first element to appear.
+* If the given array is empty, it should return an empty string.
+*/
+
+
+function findShortestElement(arr) {
+  if (!arr[0]){
+    return '';
+  }
+  return arr.sort(function(a,b){
+    return a.length - b.length;
+  })[0];
+}
+
+var output = findShortestElement(['a', 'two', 'three']);
+console.log(output); // --> 'a'
+
+/*
+
+Really like the way it's written below:
+
+function findShortestElement(arr) {
+  return arr.sort((a, b) => a.length - b.length)[0] || '';
+}
+
+*/
