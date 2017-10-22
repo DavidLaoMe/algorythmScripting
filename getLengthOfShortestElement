@@ -1,0 +1,29 @@
+/*
+Write a function called “getLengthOfShortestElement”.
+
+Given an array, “getLengthOfShortestElement” returns the length of the shortest string in the given array.
+
+Notes:
+* It should return 0 if the array is empty.
+*/
+
+function getLengthOfShortestElement(arr) {
+  if (arr.length === 0){
+    return 0;
+  }
+  return arr.sort(function compareNumbers(a, b) {
+    return a.length - b.length;
+  })[0].length;
+}
+
+var output = getLengthOfShortestElement(['one', 'two', 'three']);
+console.log(output); // --> 3
+
+/*
+Or...
+
+function getLengthOfShortestElement(arr) {
+  if(!arr.length) return 0;
+  return Math.min.apply(null, arr.map(e => e.length));
+}
+*/
