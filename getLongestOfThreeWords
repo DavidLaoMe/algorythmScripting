@@ -1,0 +1,31 @@
+/*
+Write a function called “getLongestOfThreeWords”.
+
+Given 3 words, “getLongestOfThreeWords” returns the longest of three words.
+
+Notes:
+* If there is a tie, it should return the first word in the tie.
+
+*/
+
+
+
+function getLongestOfThreeWords(word1, word2, word3) {
+  return [word1, word2, word3].reduce(function(a,b){
+   if (a.length >= b.length){
+      return a;
+    }
+    return b;
+  });
+}
+
+var output = getLongestOfThreeWords('these', 'three', 'words');
+console.log(output); // --> 'these'
+/*
+another method:
+
+function getLongestOfThreeWords(word1, word2, word3) {
+  return [word1, word2, word3].sort((a, b) => b.length - a.length)[0];
+}
+
+*/
