@@ -1,0 +1,33 @@
+/*
+Write a function called “getLengthOfLongestElement”.
+
+Given an array, “getLengthOfLongestElement” returns the length of the longest string in the given array.
+
+Notes:
+* It should return 0 if the array is empty.
+*/
+
+function getLengthOfLongestElement(arr) {
+  if (arr.length !== 0){
+    return arr.sort(function(a,b){
+      return b.length - a.length;
+    })[0].length;
+  }
+  return 0;
+}
+
+var output = getLengthOfLongestElement(['one', 'two', 'three']);
+console.log(output); // --> 5
+
+/*
+
+Or I could just map it via numeric values
+
+function getLengthOfLongestElement(arr) {
+  var arr2 = arr.map(x => x.length);
+  if (arr2.length > 0) {
+    return arr2.reduce((a, b) => Math.max(a, b));
+  }
+  return 0;
+}
+*/
