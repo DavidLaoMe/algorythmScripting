@@ -1,0 +1,39 @@
+/*
+
+Write a function called “getLargestNumberAmongMixedElements”.
+
+Given any array, “getLargestNumberAmongMixedElements” returns the largest number in the given array.
+
+Notes:
+* The array might contain values of a type other than numbers.
+* If the array is empty, it should return 0.
+* If the array contains no numbers, it should return 0.
+
+*/
+
+
+function getLargestNumberAmongMixedElements(arr) {
+  let arrNumbers = arr.filter(function(element){
+    return typeof element === 'number';
+  });
+  console.log(arrNumbers);
+    if (arrNumbers.length > 0){
+      return arrNumbers.reduce(function(a,b){
+      return Math.max(a,b);
+    });
+  }
+  return 0;
+}
+
+var output = getLargestNumberAmongMixedElements([3, 'word', 5, 'up', 3, 1]);
+console.log(output); // --> 5
+
+/*
+
+Another Method with Sort
+
+function getLargestNumberAmongMixedElements(arr) {
+  return arr.filter(x => typeof x === 'number').sort((a, b) => b - a)[0] || 0;
+}
+
+*/
