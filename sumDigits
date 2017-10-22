@@ -1,0 +1,41 @@
+/*
+Write a function called “sumDigits”.
+
+Given a number, “sumDigits” returns the sum of all its digits.
+*/
+
+
+function sumDigits(num) {
+  let strNum = num.toString();
+  console.log(strNum);
+  let arrStrNum = strNum.split('');
+  if (arrStrNum[0] === '-'){
+    arrStrNum[1] = arrStrNum[0].concat(arrStrNum[1]);
+    arrStrNum = arrStrNum.splice(1);
+  }
+  console.log(arrStrNum);
+  let arrNum = arrStrNum.map(function(element){
+    return Number(element);
+  })
+  return arrNum.reduce(function(a,b){
+    return a += b;
+  })
+}
+
+var output = sumDigits(-316);
+console.log(output); // --> 4
+
+/*
+Additional Methods:
+
+function sumDigits(num) {
+  var digits = num.toString().split('');
+  if (!Number(digits[0])) {
+    digits.shift();
+    digits[0] *= -1;
+  }
+  return digits.reduce((a, b) => Number(a) + Number(b)) || 0;
+}
+
+
+*/
