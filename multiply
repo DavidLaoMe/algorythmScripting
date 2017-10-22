@@ -1,0 +1,50 @@
+/*
+Write a function called “multiply”.
+
+Given 2 numbers, “multiply” returns their product.
+
+Notes:
+* It should not use the multiply operator (*).
+*/
+
+
+
+function multiply(num1, num2) {
+  return Math.imul(num1, num2);
+}
+
+var output = multiply(4, 7);
+console.log(output); // --> 28
+
+/*
+another method:
+
+function multiply(num1, num2) {
+  var num3 = 0;
+  for (var i = 0; i < Math.abs(num2); i++) {
+    num3 += num1;
+  }
+  if ((Math.sign(num1) === 1 && Math.sign(num2) === -1) || (Math.sign(num1) === -1 && Math.sign(num2) === -1)) {
+    return -num3;
+  } else {
+    return num3;
+  }
+}
+
+OR...
+
+function multiply(num1, num2) {
+  let sum = 0;
+  if(num1 >= 0 && num2 >= 0){
+    for (let i = 0; i < num2; i++){
+      sum += num1;
+    }
+    return sum;
+  }
+  for (let j = 0; j > num2; j--){
+     sum -= num1;
+  }
+  return sum;
+}
+
+*/
