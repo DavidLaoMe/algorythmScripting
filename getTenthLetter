@@ -1,0 +1,17 @@
+/*
+Write a function get10thLetter which returns, you guessed it, 
+the 10th letter of an input string. Assume all input strings will have at least 10 characters
+
+*/
+
+function get10thLetter(string){
+  let modString = string.replace(/[0-9\s]/g, '');
+  modString = modString.split('');
+  let letters = [];
+  for (i = 0; i < modString.length; i++){
+    if (typeof modString[i] === 'string'){
+      letters.push(modString[i])
+    }
+  }
+  return letters[9];
+}
