@@ -3,10 +3,23 @@ Write a function called “computeCompoundInterest”.
 
 Given a principal, an interest rate, a compounding frequency, and a time (in years), “computeCompoundInterest” returns the amount of compound interest generated
 */
+/*
+Write a function called “computeCompoundInterest”.
+
+Given a principal, an interest rate, a compounding frequency, and a time (in years), “computeCompoundInterest” returns the amount of compound interest generated
+*/
 
 function computeCompoundInterest(principal, interestRate, compoundingFrequency, timeInYears) {
-  return (principal*Math.pow((1+(interestRate/compoundingFrequency)),(compoundingFrequency*timeInYears)) - principal);
+  var p = principal;
+  var r = interestRate;
+  var n = compoundingFrequency;
+  var t = timeInYears;
+  
+  return p * Math.pow(1 + (r / n), n * t) - p
 }
+
+var output = computeCompoundInterest(1500, .043, 4, 6);
+console.log(output); // --> 438.8368221341061
 
 var output = computeCompoundInterest(1500, .043, 4, 6);
 console.log(output); // --> 438.8368221341061
